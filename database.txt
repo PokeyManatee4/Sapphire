@@ -1,0 +1,156 @@
+DROP TABLE IF EXISTS account;
+
+
+
+
+DROP TABLE IF EXISTS community;
+
+
+
+
+DROP TABLE IF EXISTS bans;
+
+
+
+
+DROP TABLE IF EXISTS favorites;
+
+
+
+
+DROP TABLE IF EXISTS admin_actions;
+
+
+
+
+DROP TABLE IF EXISTS post;
+
+
+
+
+DROP TABLE IF EXISTS empathies;
+
+
+
+
+DROP TABLE IF EXISTS replies;
+
+
+
+
+CREATE TABLE account (pid int, admin bool, hash varchar(255), id int, nnid varchar(16), mii varchar(2048), bio varchar(255), serviceToken varchar(255), parampack varchar(255), community int, name varchar(255), mii_grabbed int); 
+
+
+
+
+CREATE TABLE bans (pid int, reason varchar(2048) );
+
+
+
+
+CREATE TABLE favorites ( pid INT, community_id INT, created_at varchar(255) );
+
+
+
+
+CREATE TABLE community (name varchar(2048), olive_community_id int, hidden bool, created_at varchar(2048), description varchar(4848), title_ids varchar(2048), type varchar(2048), recommended bool, app_jumpable int, community_id int, app_data varchar(1028) );
+
+
+
+
+CREATE TABLE post ( community_id int, feeling_id int, body varchar(255), created_at varchar(2048), pid int, is_spoiler bool, id int, screen_name varchar(24), mii_face_url varchar(255));
+
+
+
+
+CREATE TABLE admin_actions ( pid int, create_time varchar(2048), admin varchar(24), action varchar(2048), id int );
+
+
+
+
+CREATE TABLE empathies ( post_id int, pid int, created_at varchar(255) ); 
+
+
+
+
+
+CREATE TABLE replies ( post_id int, pid int, body varchar(255), mii_face_url varchar(255));
+
+
+
+
+
+
+INSERT INTO community(name, created_at, description, title_ids, type, recommended, app_jumpable ,community_id, hidden, olive_community_id) VALUES('Nintendo TVII', '2023-10-26 17:28:58', "Nintendo TVii is a free television based service which allows users on a unified system to watch films or programs from content providers such as Hulu Plus, Netflix, Amazon Video, and their cable network.", null, 'wiiu', True, 0, 1, False, 1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO community(name, hidden, created_at, description, title_ids, type, recommended, app_jumpable, community_id, app_data, olive_community_id) VALUES("Animal Crossing Plaza", false, "2023-10-26 17:28:58", "Animal Crossing Plaza takes place in a large plaza with a Town Tree in the center. When the game is loaded, the player's Mii and Isabelle appear near the Town Tree before the camera zooms out and a random selection of several dozen villagers and special characters rush into the plaza.", null, "wiiu", true, 0, 2, null, 2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO community(name, hidden, created_at, description, title_ids, type, recommended, app_jumpable, community_id, app_data, olive_community_id) VALUES("The Legend of Zelda: The Wind Waker HD", false, "2023-10-26 17:28:58", "The game is set on a group of islands in a vast sea, a departure for the series. The player controls series protagonist Link as he attempts to save his sister from the sorcerer Ganon and becomes embroiled in a struggle for the Triforce, a sacred wish-granting relic.", null, "wiiu", true, 0, 3, null,3 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO community(name, hidden, created_at, description, title_ids, type, recommended, app_jumpable, community_id, app_data, olive_community_id) VALUES("Splatoon", false, "2023-10-26 17:28:58", 'Splatoon is a third-person shooter developed and published by Nintendo. The game features battles between Inklings, using weaponized ink to cover territory and "splat" opponents.', null, "wiiu", true, 0, 4, null, 4);
+
+
+INSERT INTO post(community_id, feeling_id, created_at, body, id, is_spoiler, screen_name, pid, mii_face_url) VALUES(1, 1, "2023-10-26 17:28:58", "Testing", 1, False, "Guest", 1, "/img/2p8h4ii7q29mw_normal_face.png");
+
+
+
+
+INSERT INTO post(community_id, feeling_id, created_at, body, id, is_spoiler, screen_name, pid, mii_face_url) VALUES(2, 1, "2023-10-26 17:28:58", "Testing", 2, False, "Guest", 1, "/img/2p8h4ii7q29mw_normal_face.png");
+
+INSERT INTO replies(post_id, pid, body, mii_face_url) VALUES(1, 1, "Amazing, it works", "/img/2p8h4ii7q29mw_normal_face.png");
+
+
+INSERT INTO replies(post_id, pid, body, mii_face_url) VALUES(2, 1, "Amazing, it works", "/img/2p8h4ii7q29mw_normal_face.png");
+
+
+
+INSERT INTO account(serviceToken, admin, community, name, pid, id, nnid, bio, hash, parampack, mii_grabbed) VALUES("", True, 0, "Guest", 1, 1, "guest", "This is a guest account, get the sapphire plugins on your wii u to make an account and change this to what you want to", "2p8h4ii7q29mw", 0, 0);
+
+
+
+
+
+
+
+INSERT INTO account(serviceToken, admin, community, name, pid, nnid, id) VALUES("0x132", 1, 1, "PokeyManatee4", 2, "pokeymanatee4", 2);
+
+
+
+
+INSERT INTO account(serviceToken, admin, community, name, pid, id, nnid) VALUES("0x745", 0, 2, "Braden", 3, 3, "bradenid");
