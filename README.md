@@ -38,7 +38,7 @@ This is an attempt to create a semi-miiversey social media platform, written in 
 
 # Setting up
 
-install mysql and nodejs and run inside the sapphire folder ``npm i`` and add the contents of database.txt to your database
+install mysql and nodejs and run inside the sapphire folder ``npm i`` and add the contents of database.txt to your database and to run sapphire, run ``node index.js`` inside of the sapphire folder(Must have config, i aint helping you set it up)
 
 # Contribution
 
