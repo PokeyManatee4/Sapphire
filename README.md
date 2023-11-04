@@ -38,7 +38,7 @@ This is an attempt to create a semi-miiversey social media platform, written in 
 
 # Setting up
 
-Currently, Sapphire is in development. This means that changes happen rapidly, and setting this up and keeping up with new changes could be difficult. Until 80% of features are implemented, I won't give a detailed guide for setting up. After that point, I'm willing to help anybody set this up.
+install mysql and nodejs and run inside the sapphire folder ``npm i`` and add the contents of database.txt to your database
 
 # Contribution
 
